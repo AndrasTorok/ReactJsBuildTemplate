@@ -6,13 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
-    "clean": "rimraf lib/*",
-    "build:bundle": "browserify --no-bundle-external ./lib/app/app.js -o ./public/js/bundle.js",
+    "clean": "rimraf lib/*",    
     "build:react":"browserify -r react > external/react.js",
     "build:react-dom":"browserify -r react-dom > external/react-dom.js",
     "build:external":"npm run build:react && npm run build:react-dom",
     "prebuild":"npm run compile",
-    "build": "npm run build:bundle"
+    "build": "npm run build:bundle",
+    "build:helloWorld": "tsc && browserify --no-bundle-external ./lib/app/helloWorld.js -o ./public/js/helloWorld.js",
+    "build:kanban": "tsc && browserify --no-bundle-external ./lib/app/kanban.js -o ./public/js/kanban.js"
   },
   "author": "Andras Torok",
   "license": "MIT",
