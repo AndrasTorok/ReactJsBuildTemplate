@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "target": "es5",
+        "outDir": "lib/app",
+        "rootDir": "src",
+        "jsx": "react"        
+    },
+    "exclude": [
+        "typings/main",
+        "typings/main.d.ts"        
+    ]
+}

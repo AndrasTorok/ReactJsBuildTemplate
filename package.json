@@ -1,0 +1,26 @@
+{
+  "name": "build_template",
+  "version": "1.0.0",
+  "description": "Build template ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "clean": "rimraf lib/*",
+    "build:bundle": "browserify --no-bundle-external ./lib/app/app.js -o ./public/js/bundle.js",
+    "build:react":"browserify -r react > external/react.js",
+    "build:react-dom":"browserify -r react-dom > external/react-dom.js",
+    "build:external":"npm run build:react && npm run build:react-dom",
+    "prebuild":"npm run compile",
+    "build": "npm run build:bundle"
+  },
+  "author": "Andras Torok",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "less": "^2.6.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  }
+}
